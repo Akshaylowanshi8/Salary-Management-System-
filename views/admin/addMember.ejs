@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
+  <link data-minify="1" href="https://www.bacancytechnology.com/blog/wp-content/cache/min/1/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css?ver=1725604482" rel="stylesheet" type="text/css" >
+
+</head>
+
+<style>
+  .box {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #formbox {
+    width: 500px;
+    margin-top: 40px;
+    /* background-color: #d3d0d0; */
+    padding: 20px;
+    box-shadow: 0px 0px 3px 0px;
+
+  }
+</style>
+
+<body>
+
+
+
+  <%- include("../include/header");-%>
+
+    <div class="box">
+      <div id="formbox">
+
+        <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="tab-login" data-mdb-pill-init href="#pills-login" role="tab"
+              aria-controls="pills-login" aria-selected="true">Admin</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab-register" data-mdb-pill-init href="#pills-register" role="tab"
+              aria-controls="pills-register" aria-selected="false">Employee</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+
+
+            <form method="post" action="/admin/saveAdmin">
+
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="name" id="loginName" class="form-control" name="name" required />
+                <label class="form-label" for="loginName">Name</label>
+              </div>
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="loginName" class="form-control" name="email" required />
+                <label class="form-label" for="loginName">Email or username</label>
+              </div>
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" id="loginPassword" name="password" class="form-control" required />
+                <label class="form-label" for="loginPassword">Password</label>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 d-flex justify-content-center">
+                </div>
+              </div>
+
+              <button type="submit"  class="btn btn-primary btn-block mb-4">
+                ADD ADMIN</button>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+
+
+            <form method="post" action="/admin/saveEmployee">
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input name="name" type="text" id="registerName" class="form-control" name="name" required />
+                <label class="form-label" for="registerName">Name</label>
+              </div>
+
+              <div style="display: flex;">
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="email" id="registerEmail" class="form-control" name="email" required />
+                  <label class="form-label" for="registerEmail">Email</label>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="mobile" id="registerEmail" class="form-control" name="mobile" required />
+                  <label class="form-label" for="registerEmail">mobile</label>
+                </div>
+              </div>
+
+              <div style="display: flex;">
+
+
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="text" id="registerPassword" class="form-control" name="baseSalary" required />
+                  <label class="form-label" for="registerPassword">Base Salary</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" id="registerPassword" class="form-control" name="password" required />
+                  <label class="form-label" for="registerPassword">Password</label>
+                </div>
+              </div>
+
+              <div data-mdb-input-init class="form-outline mb-4">
+                <textarea name="address" id="registerPassword" class="form-control" name="address" required
+                  id=""></textarea>
+                <label class="form-label" for="registerPassword">Address</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block mb-3">ADD EMPLOYEE</button>
+            </form>
+          </div>
+        </div>
+        
+        <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
+
+      </div>
+    </div>
+      <% if (message.length > 0) { %>
+          <% message.forEach(msg => { %>
+              alert("<%= msg %>");
+          <% }); %>
+      <% } %>
+  
+</body>
+
+</html>

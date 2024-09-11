@@ -1,0 +1,31 @@
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+  <a href="/admin/addMember" class="w3-bar-item w3-button">Add Member</a>
+  <a href="/admin/employees" class="w3-bar-item w3-button">Employees</a>
+  <a href="/admin/leave" class="w3-bar-item w3-button">Leves</a>
+  <a href="/admin/salarys" class="w3-bar-item w3-button">Salarys Summary</a>
+  <a href="/admin/admins" class="w3-bar-item w3-button">Admins</a>
+  <a href="/admin/attendanceSummary" class="w3-bar-item w3-button">Attendance Summary</a>
+  <a href="/admin/logout" class="w3-bar-item w3-button"> <button class="btn-primary">Logout</button></a>
+
+</div>
+
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+  <div class="w3-container">
+    <h1>walcome Admin </h1>
+  </div>
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>

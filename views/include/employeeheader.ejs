@@ -1,0 +1,28 @@
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+  <a href="/employee/loghours"class="w3-bar-item w3-button" >Log Hours</a>
+  <a href="/employee/attendanceSummary" class="w3-bar-item w3-button">Attendance Summary</a>
+  <a href="/employee/applayLeave" class="w3-bar-item w3-button"> Apply Leave</a>
+  <a href="/employee/leaveSummary" class="w3-bar-item w3-button">Leave Summary</a>
+  <a href="/" class="w3-bar-item w3-button btn-primary" class="">Logout</a>
+</div>
+
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+  <div class="w3-container">
+    <h1>walcome Employee </h1>
+  </div>
+</div>****
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
